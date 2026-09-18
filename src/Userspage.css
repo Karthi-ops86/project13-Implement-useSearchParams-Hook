@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f4f6fb 0%, #eef1f8 100%);
+}
+
+.users-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.users-card {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 41, 59, 0.08);
+  padding: 32px;
+}
+
+.users-header h1 {
+  margin: 0 0 4px 0;
+  font-size: 1.75rem;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 24px 0;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.users-table thead th {
+  text-align: left;
+  padding: 14px 18px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.users-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.users-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.users-table tbody tr:hover {
+  background-color: #eef2ff;
+}
+
+.users-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.page-indicator {
+  color: #475569;
+  font-size: 0.92rem;
+}
+
+.page-btn {
+  appearance: none;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1e293b;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background-color: #4338ca;
+  border-color: #4338ca;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(67, 56, 202, 0.25);
+}
+
+.page-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  color: #94a3b8;
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+
+@media (max-width: 640px) {
+  .users-card {
+    padding: 20px;
+  }
+
+  .users-table thead {
+    display: none;
+  }
+
+  .users-table,
+  .users-table tbody,
+  .users-table tr,
+  .users-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .users-table tr {
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .users-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .users-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+    margin-right: 12px;
+  }
+
+  .pagination {
+    justify-content: center;
+    text-align: center;
+  }
+}
